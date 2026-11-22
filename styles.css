@@ -1,0 +1,257 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #19212a;
+  background: #f9fbfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #1b54b5;
+  outline-offset: 4px;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.36fr);
+  align-items: start;
+  align-content: start;
+  gap: clamp(1.75rem, 4.4vw, 4.45rem);
+  min-height: 100svh;
+  max-width: 100.75rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 9.6vh, 5.4rem) clamp(2rem, 5.2vw, 5.25rem)
+    clamp(2rem, 5vh, 2.8rem) clamp(2rem, 5.8vw, 5.8rem);
+}
+
+.intro {
+  position: relative;
+  z-index: 1;
+  padding-top: 1.35rem;
+}
+
+.intro-stage,
+h1,
+h2 {
+  margin: 0;
+  color: #171a1d;
+  font-size: clamp(1.5rem, 2.05vw, 2rem);
+  line-height: 1.35;
+}
+
+.intro-description {
+  max-width: 34rem;
+  margin: 1.1rem 0 0;
+  color: #596975;
+  font-size: clamp(.9rem, 1.18vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.illustration {
+  position: absolute;
+  bottom: 0;
+  left: 2.98%;
+  width: 34.3%;
+  aspect-ratio: 553 / 474;
+  /* Use only the illustration area of the supplied Figma preview. */
+  background: url("assets/figma-preview.webp") 58.62% 100% / 541.77% 189.87% no-repeat;
+  pointer-events: none;
+}
+
+.upload-panel {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.35rem, 1.7vw, 1.7rem) clamp(1.4rem, 6.8vw, 6.8rem)
+    clamp(2.5rem, 4.5vw, 4.5rem);
+  border: 1px solid #edf0ef;
+  border-radius: 1.55rem;
+  background: #fff;
+  box-shadow: 0 3px 13px #172b3d0a;
+}
+
+.upload-panel h2 {
+  margin-bottom: clamp(1.15rem, 1.72vw, 1.72rem);
+  font-weight: 700;
+}
+
+.drop-zone {
+  display: flex;
+  width: 100%;
+  min-height: clamp(11rem, 22vw, 22rem);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 1.25rem;
+  border: 2px dashed #7892a8;
+  border-radius: .65rem;
+  background: #edfafd;
+  color: #405c6e;
+  cursor: pointer;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.drop-zone:hover,
+.drop-zone.is-dragging {
+  border-color: #1258ca;
+  background: #e2f4fe;
+}
+
+.drop-zone.has-file {
+  border-color: #3373c0;
+}
+
+.upload-icon {
+  position: relative;
+  display: block;
+  width: 2.7rem;
+  color: #1464c5;
+  font: 2.65rem/1 "Segoe UI Symbol", sans-serif;
+}
+
+.upload-icon span {
+  position: absolute;
+  inset: auto 0 .72rem;
+  color: #fff;
+  font: 700 .95rem/1 Arial, sans-serif;
+}
+
+#file-label {
+  max-width: 100%;
+}
+
+.file-hint {
+  font-size: .83rem;
+}
+
+.status {
+  min-height: clamp(3.2rem, 4.85vw, 4.9rem);
+  margin: 0;
+  padding: .65rem .1rem;
+  color: #325367;
+  font-size: .9rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.status[data-kind="error"] {
+  color: #9d2532;
+}
+
+.status[data-kind="success"] {
+  color: #1b6643;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: clamp(.55rem, 1.4vw, 1.45rem);
+}
+
+.button {
+  flex: 1 1 0;
+  max-width: 14.25rem;
+  min-width: 0;
+  min-height: clamp(2.5rem, 3.5vw, 3.55rem);
+  padding: .55rem .65rem;
+  border: 0;
+  border-radius: .38rem;
+  cursor: pointer;
+  font-size: clamp(.88rem, 1.2vw, 1.1rem);
+  font-weight: 600;
+}
+
+.button-secondary {
+  background: #6aaff5;
+  color: #122840;
+}
+
+.button-secondary:hover {
+  background: #8cc2fa;
+}
+
+.button-primary {
+  background: #0058ef;
+  color: white;
+}
+
+.button-primary:hover {
+  background: #0048ce;
+}
+
+.progress {
+  position: relative;
+  display: flex;
+  width: min(70%, 16rem);
+  justify-content: space-between;
+  margin: clamp(2.5rem, 5.2vw, 5.2rem) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress::before {
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 3px;
+  background: #a6c7f1;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.step-number {
+  position: relative;
+  display: grid;
+  width: 1.65rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #598ad4;
+  border-radius: 50%;
+  background: #8eb8f9;
+  color: #163c7c;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.progress [aria-current="step"] .step-number {
+  background: #2468ce;
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    max-width: 35rem;
+    padding: 2rem 1rem;
+  }
+
+  .intro {
+    padding: 0 .25rem;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  .upload-panel {
+    padding-inline: clamp(1rem, 6vw, 2.75rem);
+    border-radius: 1.15rem;
+  }
+
+  .drop-zone {
+    min-height: 11rem;
+  }
+}

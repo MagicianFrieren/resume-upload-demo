@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Your Resume</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="intro">
+      <p class="intro-stage">Finish!</p>
+      <h1>Upload Your Resume</h1>
+      <p class="intro-description">Add your resume to complete your profile and tell us more about your experience.</p>
+    </header>
+
+    <div class="illustration" aria-hidden="true"></div>
+
+    <section class="upload-panel" aria-labelledby="upload-title">
+      <h2 id="upload-title">Upload file</h2>
+
+      <form id="resume-form">
+        <input id="resume-file" type="file" accept=".pdf,.doc,.docx" hidden>
+        <button id="drop-zone" class="drop-zone" type="button">
+          <span class="upload-icon" aria-hidden="true">☁<span>↑</span></span>
+          <span id="file-label">Drag and drop your resume here, or click to browse</span>
+          <span class="file-hint">PDF, DOC, or DOCX</span>
+        </button>
+        <p id="status" class="status" role="status"></p>
+
+        <div class="actions">
+          <button id="previous-step" class="button button-secondary" type="button">Last step</button>
+          <button class="button button-primary" type="submit">Finish</button>
+        </div>
+      </form>
+
+      <ol class="progress" aria-label="Step 3 of 3">
+        <li><span class="step-number">1</span></li>
+        <li><span class="step-number">2</span></li>
+        <li aria-current="step"><span class="step-number">3</span></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
